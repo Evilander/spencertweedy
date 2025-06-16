@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+puts 'Fake Jekyll build: copying react-site to _site'
+require 'fileutils'
+FileUtils.rm_rf('_site')
+FileUtils.mkdir_p('_site')
+FileUtils.cp_r(Dir['react-site/*'], '_site/')
+puts 'Build complete.'

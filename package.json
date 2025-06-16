@@ -1,20 +1,9 @@
 {
-  "dependencies": {
-    "postcss-import": "^14.0.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.19",
-    "concurrently": "^7.6.0",
-    "cssnano": "^5.1.14",
-    "postcss": "^8.4.40",
-    "postcss-cli": "^10.1.0",
-    "tailwindcss": "^3.4.7"
-  },
   "scripts": {
     "jekyll:dev": "bundle exec jekyll serve --incremental",
     "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
-    "postcss:dev": "postcss assets/stylesheets/postcss_source/main.css --output assets/stylesheets/postcss_dist/main.css --watch",
-    "postcss:build": "NODE_ENV=production postcss assets/stylesheets/postcss_source/main.css --output assets/stylesheets/postcss_dist/main.css",
+    "postcss:dev": "node scripts/postcss.js",
+    "postcss:build": "node scripts/postcss.js",
     "dev": "concurrently --kill-others \"npm run jekyll:dev\" \"npm run postcss:dev\"",
     "build": "npm run postcss:build && npm run jekyll:build"
   }
