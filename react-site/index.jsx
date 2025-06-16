@@ -1,7 +1,7 @@
 function App() {
   const datasets = [
     { name: 'Spencer Tweedy', href: 'spencer.html' },
-    { name: 'David Berman (coming soon)', href: '#' }
+    { name: 'David Berman', href: 'david.html' }
   ];
   return (
     <div className="container">
